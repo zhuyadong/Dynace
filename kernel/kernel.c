@@ -2277,7 +2277,7 @@ void	InitKernel(void *sb, int nc)  /*  stack beginning, # of classes  */
 	if (once++)
 		return;
 #if	defined(WIN32)  &&  !defined(BOEHM_GC)
-	_is_heap_base(NULL);
+	//_is_heap_base(NULL);
 #endif
 
 	init_critical_sections();
