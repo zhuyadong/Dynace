@@ -3,7 +3,7 @@
 #project(Dynace)
 #set(CMAKE_VERBOSE_MAKEFILE ON)
 include_directories(include)
-
+add_definitions(-DUSE_SIGNAL)
 file(GLOB CLASS_SOURCES class/*.c)
 list(REMOVE_ITEM CLASS_SOURCES
         ${CMAKE_CURRENT_SOURCE_DIR}/class/FindFile.c
@@ -40,11 +40,3 @@ add_executable(dpp
         ${KERNEL_SOURCES}
         )
 target_link_libraries(dpp dynace)
-
-add_executable(example
-        examples/exam30/main.c
-        #generics/generics.c
-        )
-
-target_link_libraries(example dynace)
-
